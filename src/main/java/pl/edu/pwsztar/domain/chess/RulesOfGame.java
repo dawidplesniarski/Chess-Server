@@ -54,7 +54,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return true;
+            return (Math.abs(xEnd - xStart) == Math.abs(yEnd - yStart)) || (xEnd == xStart) ^ (yEnd == yStart);
         }
     }
 
