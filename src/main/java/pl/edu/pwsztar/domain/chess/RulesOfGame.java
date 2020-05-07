@@ -79,6 +79,8 @@ public interface RulesOfGame {
              zablokowałem możliwość poruszania w tył z myślą o testach
              gdy pojawi się drużyna przeciwna konieczne będzie na zezwolenie ruchu w dół planszy
             */
+            // Odblokowane ruchy w doł planszy dla drużyny przeciwnej
+            // return (((yEnd == yStart+1) || (yEnd == yStart-1)) && (xEnd == xStart)) ^ (((yEnd == yStart+2) || (yEnd == yStart-2)) && (xEnd == xStart));
 
             return ((yEnd == yStart+1) && (xEnd == xStart)) ^ ((yEnd == yStart+2) && (xEnd == xStart));
         }

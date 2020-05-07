@@ -39,36 +39,36 @@ public class ChessServiceImpl implements ChessService {
 
     @Override
     public boolean isCorrectMove(FigureMoveDto figureMoveDto) {
-        int currentRow;
-        int newRow;
-        int currentCol;
-        int newCol;
+        int yStart;
+        int yEnd;
+        int xStart;
+        int xEnd;
         List<String> startPoint = Arrays.asList(figureMoveDto.getStart().split("_"));
         List<String> destinationPoint = Arrays.asList(figureMoveDto.getDestination().split("_"));
 
-        currentCol =  mapToInt(startPoint.get(0));
-        currentRow = Integer.parseInt(startPoint.get(1));
-        newCol = mapToInt(destinationPoint.get(0));
-        newRow = Integer.parseInt(destinationPoint.get(1));
+        xStart =  mapToInt(startPoint.get(0));
+        yStart = Integer.parseInt(startPoint.get(1));
+        xEnd = mapToInt(destinationPoint.get(0));
+        yEnd = Integer.parseInt(destinationPoint.get(1));
 
         switch(figureMoveDto.getType()){
             case BISHOP: {
-                return bishop.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return bishop.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
             case KING: {
-                return king.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return king.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
             case QUEEN: {
-                return queen.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return queen.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
             case PAWN: {
-                return pawn.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return pawn.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
             case ROCK: {
-                return rook.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return rook.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
             case KNIGHT: {
-                return knight.isCorrectMove(currentCol, currentRow, newCol, newRow);
+                return knight.isCorrectMove(xStart, yStart, xEnd, yEnd);
             }
         }
         return false;
