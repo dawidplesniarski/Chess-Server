@@ -50,32 +50,31 @@ public class ChessServiceImpl implements ChessService {
         currentRow = Integer.parseInt(startPoint.get(1));
         newCol = mapToInt(destinationPoint.get(0));
         newRow = Integer.parseInt(destinationPoint.get(1));
-        System.out.println(figureMoveDto.getType());
 
         switch(figureMoveDto.getType()){
             case BISHOP: {
-                bishop.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for BISHOP");
+                return bishop.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case KING: {
-                king.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for KING");
+                return king.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case QUEEN: {
-                queen.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for QUEEN");
+                return queen.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case PAWN: {
-                pawn.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for PAWN");
+                return pawn.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case ROCK: {
-                rook.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for ROCK");
+                return rook.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case KNIGHT: {
-                knight.isCorrectMove(currentCol, currentRow, newCol, newRow);
-                break;
+                System.out.println("Move for KNIGHT");
+                return knight.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
         }
         return false;

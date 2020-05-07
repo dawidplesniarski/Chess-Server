@@ -32,8 +32,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            int col = Math.abs(yEnd - yStart);
+            int row = Math.abs(xEnd - xStart);
+            return ((row == 2 && col == 1) || (row == 1 && col == 2));
         }
     }
     @Component
@@ -42,7 +43,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return false;
+            return (((xEnd == xStart) || (xEnd == xStart + 1) || (xEnd == xStart - 1)) && ((yEnd == yStart)) || (yEnd == yStart+1) || (yEnd == yStart -1));
         }
     }
 
@@ -52,7 +53,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return false;
+            return true;
         }
     }
 
@@ -62,7 +63,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return false;
+            return true;
         }
     }
 
@@ -72,7 +73,7 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return false;
+            return true;
         }
     }
 
