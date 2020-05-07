@@ -96,25 +96,25 @@ class BishopTest {
 //        assertFalse(queen.isCorrectMove(xStart, yStart, xStop, yStop));
 //    }
 //
-//    @Tag("Rock")
-//    @ParameterizedTest
-//    @CsvSource({
-//            "4, 4, 4, 8",
-//            "6, 4, 1, 4",
-//            "8, 8, 5, 8",
-//            "1, 8, 3, 8"
-//    })
-//    void checkCorrectMoveForRock(int xStart, int yStart, int xStop, int yStop){
-//        assertTrue(rook.isCorrectMove(xStart, yStart, xStop, yStop));
-//    }
-//    @ParameterizedTest
-//    @CsvSource({
-//            "4, 4, 3, 2",
-//            "1, 1, 2, 8"
-//    })
-//    void checkIncorrectMoveForRock(int xStart, int yStart, int xStop, int yStop){
-//        assertFalse(rook.isCorrectMove(xStart, yStart, xStop, yStop));
-//    }
+    @Tag("Rock")
+    @ParameterizedTest
+    @CsvSource({
+            "4, 4, 4, 8",
+            "6, 4, 1, 4",
+            "8, 8, 5, 8",
+            "1, 8, 3, 8"
+    })
+    void checkCorrectMoveForRock(int xStart, int yStart, int xStop, int yStop){
+        assertTrue(rook.isCorrectMove(xStart, yStart, xStop, yStop));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "4, 4, 3, 2",
+            "1, 1, 2, 8"
+    })
+    void checkIncorrectMoveForRock(int xStart, int yStart, int xStop, int yStop){
+        assertFalse(rook.isCorrectMove(xStart, yStart, xStop, yStop));
+    }
 //
 //    @Tag("Pawn")
 //    @ParameterizedTest
