@@ -36,6 +36,45 @@ public interface RulesOfGame {
             return true;
         }
     }
+    @Component
+    @Qualifier("King")
+    class King implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            return false;
+        }
+    }
+
+    @Component
+    @Qualifier("Queen")
+    class Queen implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            return false;
+        }
+    }
+
+    @Component
+    @Qualifier("Rock")
+    class Rock implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            return false;
+        }
+    }
+
+    @Component
+    @Qualifier("Pawn")
+    class Pawn implements RulesOfGame {
+
+        @Override
+        public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            return false;
+        }
+    }
 
     // TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rock, Pawn
     // TODO: Prosze stosowac zaproponowane nazwy klas !!! (Prowadzacy zajecia posiada wlasne testy)
