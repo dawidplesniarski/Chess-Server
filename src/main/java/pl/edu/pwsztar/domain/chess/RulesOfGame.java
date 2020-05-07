@@ -74,7 +74,13 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return true;
+            /*
+             pionek porusza się tylko w przód tak jak w zasadach szachów,
+             zablokowałem możliwość poruszania w tył z myślą o testach
+             gdy pojawi się drużyna przeciwna konieczne będzie na zezwolenie ruchu w dół planszy
+            */
+
+            return ((yEnd == yStart+1) && (xEnd == xStart)) ^ ((yEnd == yStart+2) && (xEnd == xStart));
         }
     }
 

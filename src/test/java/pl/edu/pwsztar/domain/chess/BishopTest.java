@@ -115,24 +115,24 @@ class BishopTest {
     void checkIncorrectMoveForRock(int xStart, int yStart, int xStop, int yStop){
         assertFalse(rook.isCorrectMove(xStart, yStart, xStop, yStop));
     }
-//
-//    @Tag("Pawn")
-//    @ParameterizedTest
-//    @CsvSource({
-//            "4, 5, 4, 6",
-//            "7, 2, 7, 4",
-//            "2, 2, 2, 3",
-//            "1, 7, 1, 8"
-//    })
-//    void checkCorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop){
-//        assertTrue(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
-//    }
-//    @ParameterizedTest
-//    @CsvSource({
-//            "4, 5, 5, 6",
-//            "1, 1, 2, 8"
-//    })
-//    void checkIncorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop){
-//        assertFalse(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
-//    }
+
+    @Tag("Pawn")
+    @ParameterizedTest
+    @CsvSource({
+            "4, 5, 4, 6",
+            "7, 2, 7, 4",
+            "2, 2, 2, 3",
+            "1, 7, 1, 8"
+    })
+    void checkCorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop){
+        assertTrue(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "4, 5, 5, 6",
+            "1, 1, 2, 8"
+    })
+    void checkIncorrectMoveForPawn(int xStart, int yStart, int xStop, int yStop){
+        assertFalse(pawn.isCorrectMove(xStart, yStart, xStop, yStop));
+    }
 }
