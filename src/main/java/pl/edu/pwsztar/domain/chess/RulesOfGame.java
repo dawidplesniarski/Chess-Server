@@ -43,7 +43,11 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            return (((xEnd == xStart) || (xEnd == xStart + 1) || (xEnd == xStart - 1)) && ((yEnd == yStart)) || (yEnd == yStart+1) || (yEnd == yStart -1));
+            //return (((xEnd == xStart) || (xEnd == xStart + 1) || (xEnd == xStart - 1)) && ((yEnd == yStart)) || (yEnd == yStart+1) || (yEnd == yStart -1));
+            if(Math.abs(xEnd - xStart) < 2 && Math.abs(yEnd - yStart) < 2) {
+                return true;
+            }
+            return false;
         }
     }
 

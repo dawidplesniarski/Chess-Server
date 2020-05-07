@@ -53,27 +53,21 @@ public class ChessServiceImpl implements ChessService {
 
         switch(figureMoveDto.getType()){
             case BISHOP: {
-                System.out.println("Move for BISHOP");
                 return bishop.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case KING: {
-                System.out.println("Move for KING");
                 return king.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case QUEEN: {
-                System.out.println("Move for QUEEN");
                 return queen.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case PAWN: {
-                System.out.println("Move for PAWN");
                 return pawn.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case ROCK: {
-                System.out.println("Move for ROCK");
                 return rook.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
             case KNIGHT: {
-                System.out.println("Move for KNIGHT");
                 return knight.isCorrectMove(currentCol, currentRow, newCol, newRow);
             }
         }

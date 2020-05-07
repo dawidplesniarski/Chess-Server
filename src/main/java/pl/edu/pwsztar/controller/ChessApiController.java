@@ -29,7 +29,6 @@ public class ChessApiController {
     @PostMapping(value = "/chess/is-correct-move")
     public ResponseEntity<Boolean> isCorrectMove(@RequestBody FigureMoveDto figureMoveDto) {
         LOGGER.info("*** move details : {}", figureMoveDto);
-        System.out.println(chessService.isCorrectMove(figureMoveDto));
         return ResponseEntity.ok(chessService.isCorrectMove(figureMoveDto));
     }
 }
