@@ -32,6 +32,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
             int col = Math.abs(yEnd - yStart);
             int row = Math.abs(xEnd - xStart);
             return ((row == 2 && col == 1) || (row == 1 && col == 2));
@@ -43,7 +46,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            //return (((xEnd == xStart) || (xEnd == xStart + 1) || (xEnd == xStart - 1)) && ((yEnd == yStart)) || (yEnd == yStart+1) || (yEnd == yStart -1));
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
             return Math.abs(xEnd - xStart) < 2 && Math.abs(yEnd - yStart) < 2;
         }
     }
@@ -54,6 +59,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
             return (Math.abs(xEnd - xStart) == Math.abs(yEnd - yStart)) || (xEnd == xStart) ^ (yEnd == yStart);
         }
     }
@@ -64,6 +72,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
             return (xEnd == xStart) ^ (yEnd == yStart);
         }
     }
@@ -74,6 +85,9 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
             /*
              pionek porusza się tylko w przód tak jak w zasadach szachów,
              zablokowałem możliwość poruszania w tył z myślą o testach
@@ -85,8 +99,4 @@ public interface RulesOfGame {
             return ((yEnd == yStart+1) && (xEnd == xStart)) ^ ((yEnd == yStart+2) && (xEnd == xStart));
         }
     }
-
-    // TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rock, Pawn
-    // TODO: Prosze stosowac zaproponowane nazwy klas !!! (Prowadzacy zajecia posiada wlasne testy)
-    // TODO: Kazda klasa powinna implementowac interfejs RulesOfGame
 }
