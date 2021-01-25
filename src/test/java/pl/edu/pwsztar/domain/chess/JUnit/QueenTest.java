@@ -1,8 +1,9 @@
-package pl.edu.pwsztar.domain.chess;
+package pl.edu.pwsztar.domain.chess.JUnit;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import pl.edu.pwsztar.domain.chess.RulesOfGame;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
